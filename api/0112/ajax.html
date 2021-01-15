@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+    $.ajax({
+            type: "get",
+            url:"/api.2006.com",
+            contentType: "application/json;charset=utf-8",//这个参数也是header参数
+            data :JSON.stringify({"bodyName":"sdfsdf","date":"2017-11-28 07:34:01","price": 10.5,"tbId": 1}),
+            dataType: "json",
+            //这里是重点
+            beforeSend: function (XMLHttpRequest) {
+               XMLHttpRequest.setRequestHeader("uid", "1234");
+            },
+            success: function (data) {
+                alert(data);
+            },error:function(error){
+                console.log(error);
+            }
+        });
+</script>
+</html>

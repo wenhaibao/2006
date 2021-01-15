@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨域</title>
+</head>
+<body>
+    <h1>跨域</h1>
+</body>
+<script>
+    var xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200)
+        {
+            var json_str = xhr.responseText
+            console.log(json_str)
+        }
+    }
+    xhr.open('get','http://api.2006.com/0113/ajax.php')
+    xhr.send()
+</script>
+</html>

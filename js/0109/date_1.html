@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id11"></div>
+</body>
+<script>
+    setInterval(function(){
+    var t = new Date
+    // console.log(t)
+    var y = t.getFullYear()
+    // console.log(y)
+    var m = t.getMonth() + 1
+    // console.log(m)
+    var d = t.getDate()
+    // console.log(d)
+    var h = t.getHours()
+    // console.log(h)
+    var i = t.getMinutes()
+    // console.log(i)
+    var s = t.getSeconds()
+    // console.log(s)
+    var ymdhis = y + '-' + m + '-' + d + '-' + h + '-' + i + '-' + s
+    // console.log(timedq)
+    var zdq = document.getElementById("id11").innerText = ymdhis
+    },1000)
+    
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1 实例化 XHR
+var xhr = new XMLHttpRequest()
+
+// 2 监听 readyState 值
+xhr.onreadystatechange = function(){
+    if (xhr.readyState === xhr.DONE) {
+        if (xhr.status === 200) {
+            //接收服务器响应
+            var json_str = xhr.responseText
+        } else {
+        
+        }
+    }
+}
+// 3 open
+xhr.open('GET','api.php')
+
+// 4 send
+xhr.send()
+
+</script>
+</html>
