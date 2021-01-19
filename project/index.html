@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .jd {
+            width: 560px;
+        }
+        .fj {
+            width: 120px;
+            height: 120px;
+            background-color: green;
+            text-align: center;
+            float: left;
+            margin: 20px 0 0 20px;
+            color: rgb(255, 255, 255);
+            font-size: 26px;
+            line-height: 120px;
+        }
+        input {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>房间预定</h2>
+    <p></p>
+    <div class="jd">
+        <div class="fj"><input type="button" value="可预订"><p>101</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>102</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>103</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>104</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>105</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>106</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>107</p></div>
+        <div class="fj"><input type="button" value="可预订"><p>108</p></div>
+    </div>
+    
+</body>
+<script src="jquery.js"></script>
+<script>
+    $("input").on("click",function(){
+        $(this).parent('.fj').css('background-color','red')
+        $(this).val('已预定')
+    })
+    setInterval(function(){
+        var t = new Date()
+        var timey = t.getFullYear()
+        var timem = t.getMonth() + 1
+        if(timem<10)
+        {
+            timem = '0' + timem
+        }
+        var timed = t.getDate()
+        var timeh = t.getHours()
+        var timeM = t.getMinutes()
+        if(timeM<10)
+        {
+            timeM = '0' + timeM
+        }
+        var times = t.getSeconds()
+        if(times<10)
+        {
+            times = '0' + times
+        }
+        var ymdhMs = timey + '-' + timem + '-' + timed + '-' + timeh + '-' + timeM + '-' + times + '  ' + '星期一' + '  ' + '星期一不变'
+        var pp = $("h2").next('p').text(ymdhMs)
+    },1000)
+</script>
+</html>
